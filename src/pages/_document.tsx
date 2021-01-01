@@ -35,7 +35,7 @@ export default class MyDocument extends Document
 			<Html lang='en'>
 				<Head>
 					{/* <link rel='icon' href='/favicon.svg' /> */}
-					<link href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Ubuntu:wght@400;700' rel='stylesheet' />
+					<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto&family=Ubuntu+Mono:ital@0;1&family=Ubuntu:wght@700&display=swap" rel="stylesheet" />
 
 					<meta charSet='utf-8' />
 					<meta name='robots' content='index, follow' />
