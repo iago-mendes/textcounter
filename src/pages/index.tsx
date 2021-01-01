@@ -3,7 +3,7 @@ import {ChangeEvent, useEffect, useState} from 'react'
 import {FiMenu, FiCopy} from 'react-icons/fi'
 
 import Container from '../styles/pages/index'
-import {ShowInfo, defaultShowInfo, Features, defaultFeatures } from '../components/OptionsModal'
+import Options, {ShowInfo, defaultShowInfo, Features, defaultFeatures } from '../components/OptionsModal'
 
 const Home: React.FC = () =>
 {
@@ -22,34 +22,34 @@ const Home: React.FC = () =>
 
 	useEffect(() =>
 	{        
-			const savedOptions = localStorage.getItem('@text-counter/options')
-			if (savedOptions)
+		const savedOptions = localStorage.getItem('options')
+		if (savedOptions)
+		{
+			const options = JSON.parse(savedOptions)
+			let tmpShowInfo: ShowInfo =
 			{
-					const options = savedOptions.split(',')
-					let tmpShowInfo: ShowInfo =
-					{
-							words: false,
-							characters: false,
-							paragraphs: false,
-							letters: false
-					}
-					let tmpFeatures: Features =
-					{
-							suggestions: false,
-							save: false
-					}
-					options.map(option =>
-					{
-							if (option === 'words') tmpShowInfo.words = true
-							if (option === 'characters') tmpShowInfo.characters = true
-							if (option === 'paragraphs') tmpShowInfo.paragraphs = true
-							if (option === 'letters') tmpShowInfo.letters = true
-							if (option === 'save') tmpFeatures.save = true
-							return 'fix warning'
-					})
-					setShowInfo(tmpShowInfo)
-					setFeatures(tmpFeatures)
+				words: false,
+				characters: false,
+				paragraphs: false,
+				letters: false
 			}
+			let tmpFeatures: Features =
+			{
+				suggestions: false,
+				save: false
+			}
+			options.map(option =>
+			{
+				if (option === 'words') tmpShowInfo.words = true
+				if (option === 'characters') tmpShowInfo.characters = true
+				if (option === 'paragraphs') tmpShowInfo.paragraphs = true
+				if (option === 'letters') tmpShowInfo.letters = true
+				if (option === 'save') tmpFeatures.save = true
+				return 'fix warning'
+			})
+			setShowInfo(tmpShowInfo)
+			setFeatures(tmpFeatures)
+		}
 	}, [])
 
 		useEffect(() =>
@@ -100,6 +100,14 @@ const Home: React.FC = () =>
 			<Head>
 				<title>Home</title>
 			</Head>
+			<Options
+				isOpen={isOptionsOpen}
+				setIsOpen={setIsOptionsOpen}
+				showInfo={showInfo}
+				setShowInfo={setShowInfo}
+				features={features}
+				setFeatures={setFeatures}
+			/>
 			<div className="infoButtonsContainer">
 				<div className="info">
 					{showInfo.words && <span className="showInfo">Words: {info.words}</span>}
