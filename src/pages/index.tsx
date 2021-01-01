@@ -132,7 +132,6 @@ const Home: React.FC = () =>
 				value={text}
 				onChange={handleTextChange}
 				name="textarea"
-				className="textarea"
 				placeholder="Type your text here"
 			/>
 		</Container>

@@ -4,10 +4,11 @@ const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 
 	padding: 2rem;
-	gap: 2rem;
+	padding-top: 3rem;
+	height: calc(100vh - 7.5rem);
 
 	.infoButtonsContainer
 	{
@@ -18,54 +19,107 @@ const Container = styled.div`
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-	}
 
-	.info
-	{
-		display: grid;
-		grid-template-rows: 1fr 1fr;
-		grid-template-columns: 1fr 1fr;
-		grid-template-areas:
-			"words characters"
-			"paragraphs letters"
-		;
-		
-		width: 50vw;
-
-		.showInfo
+		.info
 		{
-			font-family: Ubuntu;
-			font-size: 2rem;
-			color: ${p => p.theme.colors.text};
-			
-			display: flex;
+			display: grid;
+			grid-auto-rows: 2.5rem;
+			grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+			grid-gap: 2rem;
 			align-items: center;
+			justify-items: flex-start;
+			
+			width: 50vw;
+
+			.showInfo
+			{
+				font-family: Ubuntu;
+				font-size: 2rem;
+				color: ${p => p.theme.colors.text};
+				
+				display: flex;
+				align-items: center;
+			}
+
+			.lettersContainer
+			{
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+
+				.letters
+				{
+					width: 20rem;
+					height: 3.5rem;
+					margin-top: 0.5rem;
+
+					background: none;
+					border-color: ${p => p.theme.colors.text};
+					border-style: solid;
+					border-radius: 2rem;
+
+					font-size: 2rem;
+					font-family: Ubuntu;
+					color: ${p => p.theme.colors.text};
+
+					cursor: pointer;
+					transition: background-color 0.5s, color 0.5s;
+					
+					:hover
+					{
+						background-color: ${p => p.theme.colors.text};
+						color: ${p => p.theme.colors.primary};
+					}
+				}
+			}
 		}
 
-		.lettersContainer
+		.buttons
 		{
 			display: flex;
+			flex-direction: row;
 			align-items: center;
-			justify-content: flex-start;
+			justify-content: space-between;
 
-			.letters
+			width: 15vw;
+
+			.copy
 			{
-				width: 20rem;
-				height: 3.5rem;
-				margin-top: 0.5rem;
-
 				background: none;
-				border-color: ${p => p.theme.colors.text};
-				border-style: solid;
-				border-radius: 2rem;
-
-				font-size: 2rem;
-				font-family: Ubuntu;
+				border: none;
 				color: ${p => p.theme.colors.text};
+				font-size: 2.5rem;
 
 				cursor: pointer;
-				transition: background-color 0.5s, color 0.5s;
+				transition: 0.5s;
+			
+				:hover
+				{
+					transform: scale(1.2);
+				}
+			}
+
+
+			.options
+			{
+				background: none;
+				border-color: ${p => p.theme.colors.text};
+				border-radius: 2rem;
+				border-style: solid;
+
+				width: 7rem;
+				height: 3.5rem;
+				margin-bottom: 0.5rem;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
 				
+				cursor: pointer;
+				color: ${p => p.theme.colors.text};
+				font-size: 2.5rem;
+				transition: background-color 0.5s, color 0.5s;
+			
 				:hover
 				{
 					background-color: ${p => p.theme.colors.text};
@@ -75,61 +129,7 @@ const Container = styled.div`
 		}
 	}
 
-	.buttons
-	{
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-between;
-
-		width: 15vw;
-
-		.copy
-		{
-			background: none;
-			border: none;
-			color: ${p => p.theme.colors.text};
-			font-size: 2.5rem;
-
-			cursor: pointer;
-			transition: 0.5s;
-		
-			:hover
-			{
-				transform: scale(1.2);
-			}
-		}
-
-
-		.options
-		{
-			background: none;
-			border-color: ${p => p.theme.colors.text};
-			border-radius: 2rem;
-			border-style: solid;
-
-			width: 7rem;
-			height: 3.5rem;
-			margin-bottom: 0.5rem;
-
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			
-			cursor: pointer;
-			color: ${p => p.theme.colors.text};
-			font-size: 2.5rem;
-			transition: background-color 0.5s, color 0.5s;
-		
-			:hover
-			{
-				background-color: ${p => p.theme.colors.text};
-				color: ${p => p.theme.colors.primary};
-			}
-		}
-	}
-
-	.textarea
+	textarea
 	{
 		background-color: ${p => p.theme.colors.primary};
 		border-color: ${p => p.theme.colors.textarea};
@@ -146,6 +146,8 @@ const Container = styled.div`
 		color: ${p => p.theme.colors.text};
 		font-family: Roboto;
 		font-size: 1.5rem;
+
+		resize: none;
 	
 		:focus
 		{

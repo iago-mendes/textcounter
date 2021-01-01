@@ -21,6 +21,7 @@ export default createGlobalStyle`
 
 	#__next
 	{
-		
+		width: 100%;
+		height: 100vh;
 	}
 `
