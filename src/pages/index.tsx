@@ -26,75 +26,54 @@ const Home: React.FC = () =>
 		const savedOptions = localStorage.getItem('options')
 		if (savedOptions)
 		{
-			const options = JSON.parse(savedOptions)
-			let tmpShowInfo: ShowInfo =
-			{
-				words: false,
-				characters: false,
-				paragraphs: false,
-				letters: false
-			}
-			let tmpFeatures: Features =
-			{
-				suggestions: false,
-				save: false
-			}
-			options.map(option =>
-			{
-				if (option === 'words') tmpShowInfo.words = true
-				if (option === 'characters') tmpShowInfo.characters = true
-				if (option === 'paragraphs') tmpShowInfo.paragraphs = true
-				if (option === 'letters') tmpShowInfo.letters = true
-				if (option === 'save') tmpFeatures.save = true
-				return 'fix warning'
-			})
-			setShowInfo(tmpShowInfo)
-			setFeatures(tmpFeatures)
+			const {showInfo, features}:{showInfo: ShowInfo, features: Features} = JSON.parse(savedOptions)
+
+			setShowInfo(showInfo)
+			setFeatures(features)
 		}
 	}, [])
 
-		useEffect(() =>
+	useEffect(() =>
+	{
+		if (features.save)
 		{
-				if (features.save)
-				{
-						const tmp = String(localStorage.getItem('@text-counter/text'))
-						if(tmp !== 'null') setText(tmp)
-						else setText('')
-				}
-		}, [features.save])
+			const savedText = localStorage.getItem('text')
+			if(savedText)
+				setText(savedText)
+			else
+				setText('')
+		}
+	}, [features.save])
 
-		useEffect(() =>
+	useEffect(() =>
+	{
+		const getWords = text.length === 0 ? [] : text
+			.split('\n').join(' ').split(' ')
+			.filter(item => {return item !== ''})
+
+		const getParagraphs = text.split('\n').filter(item => {return item !== ''})
+
+		const tmpInfo =
 		{
-				const getWords = text.length === 0 ? [] : text
-						.split('\n').join(' ').split(' ')
-						.filter(item => {return item !== ''})
-				const getParagraphs = text.split('\n').filter(item => {return item !== ''})
-				const tmpInfo =
-				{
-						words: getWords.length,
-						characters: text.length,
-						paragraphs: getParagraphs.length
-				}
-
-				setInfo(tmpInfo)
-				if (features.save) localStorage.setItem('@text-counter/text', text)
-		}, [text, features.save])
-
-		function handleTextChange(e: ChangeEvent<HTMLTextAreaElement>)
-		{
-				const {value} = e.target
-				setText(value)
+			words: getWords.length,
+			characters: text.length,
+			paragraphs: getParagraphs.length
 		}
 
-		function handleCopyText()
+		setInfo(tmpInfo)
+		if (features.save)
+			localStorage.setItem('text', text)
+	}, [text, features.save])
+
+	function handleCopyText()
+	{
+		document.addEventListener('copy', (e: ClipboardEvent) =>
 		{
-				document.addEventListener('copy', (e: ClipboardEvent) =>
-				{
-						e.clipboardData?.setData('text/plain', text)
-						e.preventDefault()
-				})
-				document.execCommand('copy')
-		}
+			e.clipboardData?.setData('text/plain', text)
+			e.preventDefault()
+		})
+		document.execCommand('copy')
+	}
 
 	return (
 		<Container>
@@ -140,7 +119,7 @@ const Home: React.FC = () =>
 			</div>
 			<textarea
 				value={text}
-				onChange={handleTextChange}
+				onChange={e => setText(e.target.value)}
 				name="textarea"
 				placeholder="Type your text here"
 			/>

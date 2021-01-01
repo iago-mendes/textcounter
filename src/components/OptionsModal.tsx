@@ -68,26 +68,22 @@ const Options: React.FC<OptionsParams> = ({isOpen, setIsOpen, showInfo, setShowI
 		if (name === 'characters') tmpShowInfo['characters'] = !tmpShowInfo.characters
 		if (name === 'paragraphs') tmpShowInfo['paragraphs'] = !tmpShowInfo.paragraphs
 		if (name === 'letters') tmpShowInfo['letters'] = !tmpShowInfo.letters
-		if (name === 'suggestions') tmpFeatures['suggestions'] = !tmpFeatures.suggestions
 		if (name === 'save') tmpFeatures['save'] = !tmpFeatures.save
 	}
 
 	function handleApplyChanges()
 	{
-			let savedOptions = ''
-			for (let [key, value] of Object.entries(tmpShowInfo))
-			{
-					if (value === true) savedOptions += `,${key}`
-			}
-			for (let [key, value] of Object.entries(tmpFeatures))
-			{
-					if (value === true) savedOptions += `,${key}`
-			}
-			localStorage.setItem('@text-counter/options', savedOptions)
+		let savedOptions = 
+		{
+			showInfo: tmpShowInfo,
+			features: tmpFeatures
+		}
 
-			setShowInfo(tmpShowInfo)
-			setFeatures(tmpFeatures)
-			setIsOpen(false)
+		localStorage.setItem('options', JSON.stringify(savedOptions))
+
+		setShowInfo(tmpShowInfo)
+		setFeatures(tmpFeatures)
+		setIsOpen(false)
 	}
 
 	return (
@@ -97,51 +93,53 @@ const Options: React.FC<OptionsParams> = ({isOpen, setIsOpen, showInfo, setShowI
 			id="optionsContainer"
 		>
 			<Container>
+				{/* show */}
 				<div className="options">
 					<label>What do you want me to show you?</label>
 					<ul>
+						{/* words */}
 						<li>
 							<input
 								type="checkbox"
 								defaultChecked={tmpShowInfo.words}
 								onChange={handleChange}
 								name="words" 
-								id="words"
 							/>
 							<span>Number of words</span>
 						</li>
+						{/* characters */}
 						<li>
 							<input
 								type="checkbox"
 								defaultChecked={tmpShowInfo.characters}
 								onChange={handleChange}
 								name="characters"
-								id="characters"
 							/>
 							<span>Number of characters</span>
 						</li>
+						{/* paragraphs */}
 						<li>
 							<input
 								type="checkbox"
 								defaultChecked={tmpShowInfo.paragraphs}
 								onChange={handleChange}
 								name="paragraphs"
-								id="paragraphs"
 							/>
 							<span>Number of paragraphs</span>
 						</li>
+						{/* letters */}
 						<li>
 							<input
 								type="checkbox"
 								defaultChecked={tmpShowInfo.letters}
 								onChange={handleChange}
 								name="letters"
-								id="letters"
 							/>
 							<span>Letter density</span>
 						</li>
 					</ul>
 				</div>
+				{/* features */}
 				<div className="options">
 					<label>Choose which features you want.</label>
 					<ul>
@@ -151,7 +149,6 @@ const Options: React.FC<OptionsParams> = ({isOpen, setIsOpen, showInfo, setShowI
 								defaultChecked={tmpFeatures.save}
 								onChange={handleChange}
 								name="save"
-								id="save"
 							/>
 							<span>Save text to next visit</span>
 						</li>
