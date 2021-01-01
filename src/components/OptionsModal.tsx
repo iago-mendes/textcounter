@@ -2,6 +2,9 @@ import {ChangeEvent} from 'react'
 import Modal from 'react-modal'
 
 import Container from '../styles/components/OptionsModal'
+import {desktopModalStyle} from '../styles/global'
+
+Modal.setAppElement('#__next')
 
 export interface ShowInfo
 {
@@ -43,27 +46,6 @@ interface OptionsParams
 
 const Options: React.FC<OptionsParams> = ({isOpen, setIsOpen, showInfo, setShowInfo, features, setFeatures}) =>
 {
-	const desktopStyle: Modal.Styles =
-	{
-		overlay:
-		{
-			backgroundColor: 'rgba(0, 0, 0, 0.5)'
-		},
-		content:
-		{
-			display: 'flex',
-			alignItems: 'center',
-			justifyContent: 'center',
-			background: 'none',
-			border: 'none',
-			padding: 0,
-			width: '100%',
-			height: '100%',
-			left: 0,
-			top: 0
-		}
-	}
-
 	let tmpShowInfo: ShowInfo =
 	{
 		words: showInfo.words,
@@ -111,7 +93,7 @@ const Options: React.FC<OptionsParams> = ({isOpen, setIsOpen, showInfo, setShowI
 	return (
 		<Modal
 			isOpen = {isOpen}
-			style = {desktopStyle}
+			style = {desktopModalStyle}
 			id="optionsContainer"
 		>
 			<Container>

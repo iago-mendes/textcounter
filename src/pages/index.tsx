@@ -4,6 +4,7 @@ import {FiMenu, FiCopy} from 'react-icons/fi'
 
 import Container from '../styles/pages/index'
 import Options, {ShowInfo, defaultShowInfo, Features, defaultFeatures } from '../components/OptionsModal'
+import LetterDensity from '../components/LetterDensity'
 
 const Home: React.FC = () =>
 {
@@ -108,6 +109,7 @@ const Home: React.FC = () =>
 				features={features}
 				setFeatures={setFeatures}
 			/>
+			<LetterDensity isOpen={isLettersOpen} setIsOpen={setIsLettersOpen} text={text} />
 			<div className="infoButtonsContainer">
 				<div className="info">
 					{showInfo.words && <span className="showInfo">Words: {info.words}</span>}
