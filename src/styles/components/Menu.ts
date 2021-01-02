@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Container = styled.nav`
-	height: 7.5rem;
+	height: 5rem;
 	width: 100%;
 	background-color: ${p => p.theme.colors.primary};
 
@@ -22,11 +22,18 @@ const Container = styled.nav`
 		text-decoration: none;
 
 		width: 30rem;
+
+		transition: 0.25s;
+
+		:hover
+		{
+			transform: scale(1.02);
+		}
 		
 		img
 		{
-			height: 5rem;
-			width: 5rem;
+			height: 4rem;
+			width: 4rem;
 		}
 
 		span
@@ -60,7 +67,7 @@ const Container = styled.nav`
 		.about
 		{
 			width: 10rem;
-			height: 5rem;
+			height: 4rem;
 
 			display: flex;
 			align-items: center;
@@ -73,7 +80,7 @@ const Container = styled.nav`
 
 			text-decoration: none;
 			color: ${p => p.theme.colors.text};
-			transition: 0.5s;
+			transition: 0.25s;
 		
 			:hover
 			{

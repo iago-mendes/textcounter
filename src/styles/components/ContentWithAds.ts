@@ -6,8 +6,9 @@ const Container = styled.div`
 	align-items: center;
 	justify-content: space-between;
 
-	padding: 2rem;
-	height: calc(100vh - 7.5rem);
+	padding-left: 1rem;
+	padding-right: 1rem;
+	height: calc(100vh - 5rem);
 
 	main
 	{
@@ -17,6 +18,9 @@ const Container = styled.div`
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
+
+		padding-top: 3rem;
+		padding-bottom: 3rem;
 	}
 
 	aside
@@ -65,7 +69,7 @@ const Container = styled.div`
 		.ad
 		{
 			width: 160px;
-			height: 500px;
+			height: 600px;
 		}
 	}
 
