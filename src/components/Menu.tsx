@@ -15,10 +15,10 @@ const Menu: React.FC = () =>
 			{ctx => (
 				<Container>
 					<Link href='/'>
-							<a className='logo'>
-								<img src={logoDark} alt='robot'/>
-								<span>Text Counter</span>
-							</a>
+						<a className='logo'>
+							<img src={ctx.isDark ? logoDark : logoLight} alt='robot'/>
+							<span>Text Counter</span>
+						</a>
 					</Link>
 					<div className='buttons'>
 						<Switch
