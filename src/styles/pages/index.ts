@@ -1,18 +1,9 @@
 import styled from 'styled-components'
 
 const Container = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-
-	padding: 2rem;
-	padding-top: 3rem;
-	height: calc(100vh - 7.5rem);
-
 	.infoButtonsContainer
 	{
-		width: 80vw;
+		width: 100%;
 		height: fit-content;
 
 		display: flex;
@@ -136,7 +127,7 @@ const Container = styled.div`
 
 		padding: 2rem;
 		height: calc(100vh - 7.5rem - 2 * 2rem - 8rem - 2rem);
-		width: 80vw;
+		width: 100%;
 		overflow: -moz-hidden-unscrollable;
 
 		color: ${p => p.theme.colors.text};
