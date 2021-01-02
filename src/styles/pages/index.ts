@@ -23,7 +23,7 @@ const Container = styled.div`
 		.info
 		{
 			display: grid;
-			grid-auto-rows: 2.5rem;
+			grid-auto-rows: 3rem;
 			grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 			grid-gap: 2rem;
 			align-items: center;
@@ -41,21 +41,19 @@ const Container = styled.div`
 				align-items: center;
 			}
 
-			.lettersContainer
+			.letters
 			{
 				display: flex;
 				align-items: center;
 				justify-content: flex-start;
 
-				.letters
+				button
 				{
 					width: 20rem;
-					height: 3.5rem;
-					margin-top: 0.5rem;
+					height: 3rem;
 
 					background: none;
-					border-color: ${p => p.theme.colors.text};
-					border-style: solid;
+					border: ${p => p.theme.colors.text} 1px solid;
 					border-radius: 2rem;
 
 					font-size: 2rem;
@@ -63,7 +61,7 @@ const Container = styled.div`
 					color: ${p => p.theme.colors.text};
 
 					cursor: pointer;
-					transition: background-color 0.5s, color 0.5s;
+					transition: background-color 0.25s, color 0.25s;
 					
 					:hover
 					{
@@ -91,14 +89,13 @@ const Container = styled.div`
 				font-size: 2.5rem;
 
 				cursor: pointer;
-				transition: 0.5s;
+				transition: 0.25s;
 			
 				:hover
 				{
 					transform: scale(1.2);
 				}
 			}
-
 
 			.options
 			{
@@ -109,7 +106,6 @@ const Container = styled.div`
 
 				width: 7rem;
 				height: 3.5rem;
-				margin-bottom: 0.5rem;
 
 				display: flex;
 				align-items: center;
@@ -118,7 +114,7 @@ const Container = styled.div`
 				cursor: pointer;
 				color: ${p => p.theme.colors.text};
 				font-size: 2.5rem;
-				transition: background-color 0.5s, color 0.5s;
+				transition: background-color 0.25s, color 0.25s;
 			
 				:hover
 				{

@@ -94,11 +94,10 @@ const Home: React.FC = () =>
 					{showInfo.words && <span className="showInfo">Words: {info.words}</span>}
 					{showInfo.characters && <span className="showInfo">Characters: {info.characters}</span>}
 					{showInfo.paragraphs && <span className="showInfo">Paragraphs: {info.paragraphs}</span>}
-					{showInfo.letters && <div className="lettersContainer">
+					{showInfo.letters && <div className="letters">
 						<button
 							onClick={() => setIsLettersOpen(!isLettersOpen)}
 							title="See letter density"
-							className="letters"
 						>
 							Letter Density
 						</button>
