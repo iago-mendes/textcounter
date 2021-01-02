@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react"
+import {useEffect, useState} from "react"
 import Modal from 'react-modal'
 
 import Container from '../styles/components/LetterDensity'
-import { desktopModalStyle } from "../styles/global"
+import {desktopModalStyle} from "../styles/global"
 
 Modal.setAppElement('#__next')
 

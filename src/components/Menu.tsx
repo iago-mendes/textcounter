@@ -1,4 +1,3 @@
-import React, {useEffect, useState} from 'react'
 import Link from 'next/link'
 import Switch from 'react-switch'
 import {FiSun, FiMoon} from 'react-icons/fi'
