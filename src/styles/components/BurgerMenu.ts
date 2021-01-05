@@ -4,7 +4,41 @@ const Container = styled.div`
 	width: 100%;
 	height: 100%;
 
-	background-color: ${p => `${p.theme.colors.primary}cc`};
+	background-color: ${p => `${p.theme.colors.primary}bf`};
+
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+
+	.close
+	{
+		position: absolute;
+
+		right: 3rem;
+		top: 3rem;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		background-color: ${p => p.theme.colors.text};
+		color: ${p => p.theme.colors.primary};
+
+		border: none;
+		border-radius: 100rem;
+		padding: 0.5rem;
+
+		transition: 0.25s;
+
+		:hover
+		{
+			background-color: ${p => p.theme.colors.secondaryStrong};
+		}
+	}
 
 	.themeIcon
 	{
