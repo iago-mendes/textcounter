@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
-import {FiMenu, FiCopy} from 'react-icons/fi'
+import {FiCopy} from 'react-icons/fi'
+import {IoIosOptions} from 'react-icons/io'
 
 import Container from '../styles/pages/index'
 import Options, {ShowInfo, defaultShowInfo, Features, defaultFeatures } from '../components/OptionsModal'
@@ -110,7 +111,7 @@ const Home: React.FC = () =>
 							onClick={() => setIsOptionsOpen(!isOptionsOpen)}
 							className="options"
 						>
-							<FiMenu />
+							<IoIosOptions />
 						</button>
 					</div>
 				</div>
