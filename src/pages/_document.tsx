@@ -2,6 +2,7 @@ import Document, {DocumentInitialProps, DocumentContext, Html, Head, Main, NextS
 import {ServerStyleSheet} from 'styled-components'
 
 import {gaId} from '../utils/gtag'
+import {adClient} from '../utils/gAd'
 
 export default class MyDocument extends Document
 {
@@ -56,6 +57,13 @@ export default class MyDocument extends Document
           		`
           	}}
           />
+
+					{/* Google Adsense */}
+					<script
+						data-ad-client={adClient}
+						async
+						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+					/>
 				</Head>
 
 				<body>
