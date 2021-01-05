@@ -95,6 +95,24 @@ const Container = styled.nav`
 			}
 		}
 	}
+
+	.menuButton
+	{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		background: none;
+		border: none;
+
+		color: ${p => p.theme.colors.text};
+		transition: 0.25s;
+
+		:hover
+		{
+			transform: scale(1.25);
+		}
+	}
 `
 
 export default Container
