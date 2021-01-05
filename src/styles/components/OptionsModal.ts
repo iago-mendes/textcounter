@@ -94,6 +94,18 @@ const Container = styled.div`
 			}
 		}
 	}
+
+	@media (max-width: 700px)
+	{
+		width: 75vw;
+
+		.buttons button
+		{
+			height: 4rem;
+			width: 8.8rem;
+			font-size: 2rem;
+		}
+	}
 `
 
 export default Container

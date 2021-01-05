@@ -74,6 +74,34 @@ const Container = styled.div`
 			color: ${p => p.theme.colors.secondaryStrong};
 		}
 	}
+
+	@media (max-width: 700px)
+	{
+		width: 75vw;
+
+		ul
+		{
+			-webkit-column-count: 1;
+			-moz-column-count: 1;
+			column-count: 1;
+
+			height: fit-content;
+
+			li label
+			{
+				font-size: 1.5rem;
+			}
+		}
+
+		button
+		{
+			height: 4rem;
+			width: 8.8rem;
+			font-size: 2rem;
+
+			margin-bottom: 2rem;
+		}
+	}
 `
 
 export default Container
