@@ -95,6 +95,15 @@ const Container = styled.div`
 				font-size: 1.5rem;
 			}
 		}
+
+		button
+		{
+			font-size: 2rem;
+
+			height: 5rem;
+			width: 11rem;
+			margin-bottom: 2rem;
+		}
 	}
 `
 
