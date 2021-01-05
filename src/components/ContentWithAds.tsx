@@ -18,12 +18,12 @@ const ContentWithAds: React.FC = ({children}) =>
 
 	useEffect(() =>
 	{
-		if (width < 1100 && height < 700 && width > 700)
+		if (width < 1100 && height < 700 && width > 900)
 		{
 			setAdSize(adSizes.square)
-			setAdsNumber(2)
+			height < 630 ? setAdsNumber(1) : setAdsNumber(2)
 		}
-		else if (width < 1100 && height >= 700  && width > 700)
+		else if (width < 1100 && height >= 700  && width > 900)
 		{
 			setAdSize(adSizes.wideSkyscraper)
 			setAdsNumber(1)
@@ -31,7 +31,7 @@ const ContentWithAds: React.FC = ({children}) =>
 		else
 		{
 			setAdSize(adSizes.mediumRectangle)
-			setAdsNumber(2)
+			height < 630 ? setAdsNumber(1) : setAdsNumber(2)
 		}
 	}, [width, height])
 

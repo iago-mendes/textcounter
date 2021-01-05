@@ -157,7 +157,7 @@ const Container = styled.div`
 		display: none;
 	}
 
-	@media (max-width: 700px)
+	@media (max-width: 900px)
 	{
 		.infoButtonsContainer
 		{
@@ -172,9 +172,6 @@ const Container = styled.div`
 				grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 
 				width: 100%;
-				
-				padding-left: 2rem;
-				padding-right: 2rem;
 			
 				.showInfo
 				{

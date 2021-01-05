@@ -73,7 +73,7 @@ const Container = styled.div`
 		}
 	}
 
-	@media (max-width: 700px)
+	@media (max-width: 900px)
 	{
 		flex-direction: column;
 		padding: 1rem;
