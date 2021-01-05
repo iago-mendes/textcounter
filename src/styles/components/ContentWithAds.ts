@@ -63,14 +63,14 @@ const Container = styled.div`
 		}
 	}
 
-	.vertical
+	/* .vertical
 	{
 		.ad
 		{
 			width: 160px;
 			height: 600px;
 		}
-	}
+	} */
 
 	@media (max-height: 615px)
 	{
