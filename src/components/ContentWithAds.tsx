@@ -4,7 +4,7 @@ const ContentWithAds: React.FC = ({children}) =>
 {
 	return (
 		<Container>
-			<VerticalAd />
+			{/* <VerticalAd /> */}
 			<main>
 				{children}
 			</main>

@@ -19,8 +19,7 @@ const Container = styled.div`
 		align-items: center;
 		justify-content: space-between;
 
-		padding-top: 3rem;
-		padding-bottom: 3rem;
+		padding: 3rem;
 	}
 
 	aside
