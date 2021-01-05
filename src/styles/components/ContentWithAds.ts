@@ -5,85 +5,71 @@ const Container = styled.div`
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+	gap: 2rem;
 
-	padding-left: 1rem;
+	padding-left: 3rem;
 	padding-right: 1rem;
 	height: calc(100vh - 5rem);
 
 	main
 	{
 		height: 100%;
+		width: 80%;
 
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
 
-		padding: 3rem;
+		padding-top: 3rem;
+		padding-bottom: 3rem;
 	}
 
 	aside
 	{
-		border: ${p => p.theme.colors.text} solid 1px;
-		border-radius: 0.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
 
-		position: relative;
-
-		.titleContainer
+		.center
 		{
-			position: absolute;
-			top: -7px;
-			z-index: 1;
+			border: ${p => p.theme.colors.text} solid 1px;
+			border-radius: 0.5rem;
 
-			width: 100%;
+			position: relative;
 
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-			h1
+			.titleContainer
 			{
-				background-color: ${p => p.theme.colors.primary};
+				position: absolute;
+				top: -7px;
+				z-index: 1;
 
-				padding-left: 1rem;
-				padding-right: 1rem;
+				width: 100%;
 
-				font-family: Ubuntu;
-				font-weight: 400;
-				font-size: 1rem;
-				color: ${p => p.theme.colors.text};
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				h1
+				{
+					background-color: ${p => p.theme.colors.primary};
+
+					padding-left: 1rem;
+					padding-right: 1rem;
+
+					font-family: Ubuntu;
+					font-weight: 400;
+					font-size: 1rem;
+					color: ${p => p.theme.colors.text};
+				}
 			}
-		}
 
-		.ad
-		{
-			/* background-color: green; */
+			.ad
+			{
+				background-color: green;
 
-			margin: 0.5rem;
-		}
-	}
-
-	/* .vertical
-	{
-		.ad
-		{
-			width: 160px;
-			height: 600px;
-		}
-	} */
-
-	@media (max-height: 615px)
-	{
-		justify-content: center;
-
-		main
-		{
-			width: 80vw;
-		}
-
-		aside
-		{
-			display: none;
+				margin: 0.5rem;
+			}
 		}
 	}
 `
