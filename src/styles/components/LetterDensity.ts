@@ -78,6 +78,9 @@ const Container = styled.div`
 	@media (max-width: 700px)
 	{
 		width: 75vw;
+		overflow: auto;
+
+		gap: 2rem;
 
 		ul
 		{
@@ -91,15 +94,6 @@ const Container = styled.div`
 			{
 				font-size: 1.5rem;
 			}
-		}
-
-		button
-		{
-			height: 4rem;
-			width: 8.8rem;
-			font-size: 2rem;
-
-			margin-bottom: 2rem;
 		}
 	}
 `
