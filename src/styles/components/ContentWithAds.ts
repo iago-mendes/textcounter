@@ -66,7 +66,7 @@ const Container = styled.div`
 
 			.ad
 			{
-				background-color: green;
+				/* background-color: green; */
 
 				margin: 0.5rem;
 			}

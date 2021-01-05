@@ -31,7 +31,8 @@ export const desktopModalStyle: Modal.Styles =
 {
 	overlay:
 	{
-		backgroundColor: 'rgba(0, 0, 0, 0.5)'
+		backgroundColor: 'rgba(0, 0, 0, 0.5)',
+		zIndex: 2
 	},
 
 	content:
