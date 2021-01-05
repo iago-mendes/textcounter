@@ -1,5 +1,3 @@
-import Head from 'next/head'
-
 import logoDark from '../assets/logo-dark.svg'
 import logoLight from '../assets/logo-light.svg'
 
@@ -12,9 +10,6 @@ const About: React.FC = () =>
 		<ThemeContext.Consumer>
 			{ctx => (
 				<Container>
-					<Head>
-						<title>About</title>
-					</Head>
 					<div className="greetings">
 						<h1>Hi there!</h1>
 						<h2>So, do you want to know more about me? That’s awesome!</h2>

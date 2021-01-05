@@ -5,6 +5,7 @@ import GlobalStyle from '../styles/global'
 import theme from '../styles/theme'
 import Menu from '../components/Menu'
 import ThemeContext, {ThemeProvider} from '../utils/ThemePreference'
+import SEOHead from '../components/SEOHead'
 
 const MyApp: React.FC<AppProps> = ({Component, pageProps}) =>
 {
@@ -13,6 +14,7 @@ const MyApp: React.FC<AppProps> = ({Component, pageProps}) =>
 			<ThemeContext.Consumer>
 				{ctx => (
 					<StyledThemeProvider theme={ctx.isDark ? theme.dark : theme.light}>
+						<SEOHead isDark={ctx.isDark} />
 						<Menu />
 						<Component {...pageProps} />
 						<GlobalStyle />

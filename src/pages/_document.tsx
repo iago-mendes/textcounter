@@ -34,11 +34,7 @@ export default class MyDocument extends Document
 		return (
 			<Html lang='en'>
 				<Head>
-					{/* <link rel='icon' href='/favicon.svg' /> */}
 					<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto&family=Ubuntu+Mono:ital@0;1&family=Ubuntu:wght@700&display=swap" rel="stylesheet" />
-
-					<meta charSet='utf-8' />
-					<meta name='robots' content='index, follow' />
 				</Head>
 
 				<body>

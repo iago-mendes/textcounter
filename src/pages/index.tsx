@@ -1,5 +1,4 @@
-import Head from 'next/head'
-import {ChangeEvent, useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import {FiMenu, FiCopy} from 'react-icons/fi'
 
 import Container from '../styles/pages/index'
@@ -78,9 +77,6 @@ const Home: React.FC = () =>
 
 	return (
 		<Container>
-			<Head>
-				<title>Home</title>
-			</Head>
 			<Options
 				isOpen={isOptionsOpen}
 				setIsOpen={setIsOptionsOpen}
