@@ -43,6 +43,10 @@ const Container = styled.div`
 					width: 20rem;
 					height: 3rem;
 
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
 					background: none;
 					border: ${p => p.theme.colors.text} 1px solid;
 					border-radius: 2rem;
@@ -151,6 +155,48 @@ const Container = styled.div`
 
 	::-webkit-scrollbar {
 		display: none;
+	}
+
+	@media (max-width: 700px)
+	{
+		.infoButtonsContainer
+		{
+			width: 100%;
+			flex-direction: column;
+
+			gap: 2rem;
+			margin-bottom: 1rem;
+		
+			.info
+			{
+				grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+
+				width: 100%;
+				
+				padding-left: 2rem;
+				padding-right: 2rem;
+			
+				.showInfo
+				{
+					font-size: 1.75rem;
+				}
+
+				.letters
+				{
+					button
+					{
+						width: 15rem;
+						font-size: 1.75rem;
+					}
+				}
+			}
+
+			.buttons
+			{
+				width: 100%;
+				justify-content: space-around;
+			}
+		}
 	}
 `
 

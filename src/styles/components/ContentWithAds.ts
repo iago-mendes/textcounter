@@ -72,6 +72,24 @@ const Container = styled.div`
 			}
 		}
 	}
+
+	@media (max-width: 700px)
+	{
+		flex-direction: column;
+		padding: 1rem;
+
+		main
+		{
+			width: 100%;
+
+			padding: 0;
+		}
+
+		aside
+		{
+			padding-bottom: 2rem;
+		}
+	}
 `
 
 export default Container
