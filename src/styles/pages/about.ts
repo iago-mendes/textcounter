@@ -36,51 +36,51 @@ const Container = styled.div`
 		color: ${p => p.theme.colors.text};
 		font-family: Ubuntu Mono;
 		font-size: 2.5rem;
-	}
 
-	.card h2
-	{
-		padding-left: 2rem;
-		padding-right: 2rem;
-		background-color: ${p => p.theme.colors.primary};
+		h2
+		{
+			padding-left: 2rem;
+			padding-right: 2rem;
+			background-color: ${p => p.theme.colors.primary};
 
-		margin-top: -4rem;
+			margin-top: -4rem;
 
-		text-align: center;
-		width: fit-content;
-	}
+			text-align: center;
+			width: fit-content;
+		}
 
-	.card ul
-	{
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-between;
-	}
+		ul
+		{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			
+			img
+			{
+				width: 25vw;
+				height: 25vw;
+			}
 
-	.card ul img
-	{
-		width: 25vw;
-		height: 25vw;
-	}
-
-	.card ul p
-	{
-		width: 50%;
-		padding: 2rem;
-	}
-
-	.card ul p a
-	{
-		text-decoration: none;
-		color: ${p => p.theme.colors.secondaryStrong};
-		transition: 0.5s;
-	}
-
-	.card ul p a:hover
-	{
-		text-shadow: 0px 0px 10px ${p => p.theme.colors.secondary};
-		font-size: 2.75rem;
+			p
+			{
+				width: 50%;
+				padding: 2rem;
+				
+				a
+				{
+					text-decoration: none;
+					color: ${p => p.theme.colors.secondaryStrong};
+					transition: 0.5s;
+				
+					:hover
+					{
+						text-shadow: 0px 0px 10px ${p => p.theme.colors.secondary};
+						font-size: 2.75rem;
+					}
+				}
+			}
+		}
 	}
 `
 
