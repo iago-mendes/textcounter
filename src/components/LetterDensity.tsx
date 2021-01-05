@@ -96,20 +96,22 @@ const LetterDensity: React.FC<LetterDensityParams> = ({isOpen, setIsOpen, text})
 			style={desktopModalStyle}
 		>
 			<Container>
-				<h1>Letter Density</h1>
-				<ul>
-					{alfabet.map(letter =>
-					{
-						if (letters[letter].number !== 0) return (
-							<li key={letter} className="letterInfo">
-								<label className="letter">{letter.toUpperCase()} &rarr; </label>
-								<label className="quantity">{letters[letter].number} ({letters[letter].percentage}%)</label>
-							</li>
-						)
-						else return null
-					})}
-				</ul>
-				<button onClick={() => setIsOpen(false)} className="closeButton">Close</button>
+				<main>
+					<h1>Letter Density</h1>
+					<ul>
+						{alfabet.map(letter =>
+						{
+							if (letters[letter].number !== 0) return (
+								<li key={letter} className="letterInfo">
+									<label className="letter">{letter.toUpperCase()} &rarr; </label>
+									<label className="quantity">{letters[letter].number} ({letters[letter].percentage}%)</label>
+								</li>
+							)
+							else return null
+						})}
+					</ul>
+					<button onClick={() => setIsOpen(false)} className="closeButton">Close</button>
+				</main>
 			</Container>
 		</Modal>
 	)
