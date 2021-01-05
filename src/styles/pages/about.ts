@@ -76,8 +76,44 @@ const Container = styled.div`
 					:hover
 					{
 						text-shadow: 0px 0px 10px ${p => p.theme.colors.secondary};
-						font-size: 2.75rem;
+						text-decoration: underline;
 					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1000px)
+	{
+		.greetings
+		{
+			width: 80%;
+		}
+
+		.card
+		{
+			width: 90%;
+			padding: 1rem;
+
+			h2
+			{
+				font-size: 3rem;
+
+				width: 17rem;
+				padding-left: 1rem;
+				padding-right: 1rem;
+
+				margin-top: -3rem;
+				margin-bottom: 1rem;
+			}
+
+			ul
+			{
+				flex-direction: column;
+			
+				p
+				{
+					width: 100%;
 				}
 			}
 		}
