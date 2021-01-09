@@ -4,7 +4,8 @@ const Container = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-between;
+	/* justify-content: space-between; */
+	justify-content: center;
 	gap: 2rem;
 
 	padding-left: 3rem;

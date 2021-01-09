@@ -50,7 +50,7 @@ const ContentWithAds: React.FC = ({children}) =>
 			<main>
 				{children}
 			</main>
-			<aside>
+			{/* <aside>
 				{ads.map((ad, index) => (
 					<div className='center' key={index}>
 						<div className="titleContainer">
@@ -59,7 +59,7 @@ const ContentWithAds: React.FC = ({children}) =>
 						<div className='ad' style={{width: adSize.width, height: adSize.height}} />
 					</div>
 				))}
-			</aside>
+			</aside> */}
 		</Container>
 	)
 }
