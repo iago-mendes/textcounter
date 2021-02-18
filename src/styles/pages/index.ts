@@ -124,7 +124,7 @@ const Container = styled.div`
 	{
 		background-color: ${p => p.theme.colors.primary};
 		border-color: ${p => p.theme.colors.textarea};
-		border-radius: 2.5rem;
+		border-radius: 0.5rem;
 		border-style: solid;
 		box-shadow: inset 0px 0px 5px rgba(0,0,0,1);
 		transition: border-color 1s;
@@ -145,16 +145,35 @@ const Container = styled.div`
 			border-color: ${p => p.theme.colors.textareaFocus};
 			box-shadow: 0px 0px 5px rgba(0,0,0,1);
 		}
-	}
 
-	::selection
-	{
-		background-color: ${p => p.theme.colors.secondary};
-		color: ${p => p.theme.colors.secondaryStrong};
-	}
+		::selection
+		{
+			background-color: ${p => p.theme.colors.secondaryStrong};
+		}
 
-	::-webkit-scrollbar {
-		display: none;
+		::-webkit-scrollbar
+		{
+			width: 0.75rem;
+			border-radius: 100rem;
+
+		}
+
+		::-webkit-scrollbar-track
+		{
+			background-color: ${p => p.theme.colors.textarea}26;
+			border-radius: 100rem;
+		}
+		
+		::-webkit-scrollbar-thumb
+		{
+			background-color: ${p => p.theme.colors.textarea};
+			border-radius: 100rem;
+
+			:hover
+			{
+				background-color: ${p => p.theme.colors.textarea}bf;
+			}
+		}
 	}
 
 	@media (max-width: 900px)
