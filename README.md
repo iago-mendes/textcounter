@@ -19,7 +19,7 @@ This is a minimalist front-end application to help in the process of writing. It
 ## Technologies
 
 - [JavaScript](https://www.javascript.com)
-- [TypesScript](https://www.typescriptlang.org)
+- [TypeScript](https://www.typescriptlang.org)
 - [React.js](https://reactjs.org)
 - [Next.js](https://nextjs.org)
 - [Styled Components](https://styled-components.com)
